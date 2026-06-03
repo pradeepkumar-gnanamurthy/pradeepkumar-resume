@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pradeepkumar G - Resume</title>
+
+
+<style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg: #0f172a;
+    --card: #1e293b;
+    --card-light: #334155;
+    --text: #e2e8f0;
+    --muted: #94a3b8;
+    --accent: #38bdf8;
+    --border: #475569;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    max-width: 1100px;
+    margin: auto;
+    padding: 30px;
+    line-height: 1.6;
+}
+
+.header {
+    text-align: center;
+    border-bottom: 3px solid var(--accent);
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+.header h1 {
+    color: var(--accent);
+    font-size: 34px;
+    letter-spacing: 1px;
+}
+
+.contact {
+    margin-top: 10px;
+    color: var(--muted);
+}
+
+.contact a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.toolbar {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.toolbar button {
+    background: var(--accent);
+    color: #0f172a;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.toolbar button:hover {
+    transform: translateY(-2px);
+}
+
+.section {
+    background: var(--card);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid var(--border);
+}
+
+.section-title {
+    color: var(--accent);
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 8px;
+}
+
+.summary {
+    text-align: justify;
+}
+
+.skills-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.skills-table td {
+    border: 1px solid var(--border);
+    padding: 10px;
+}
+
+.skills-table td:first-child {
+    width: 25%;
+    font-weight: 600;
+    background: var(--card-light);
+}
+
+ul {
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+.job {
+    margin-bottom: 20px;
+}
+
+.job-title {
+    color: var(--accent);
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.duration {
+    float: right;
+    color: var(--muted);
+}
+
+.project {
+    color: var(--muted);
+    margin-top: 4px;
+}
+
+@media print {
+
+    body {
+        background: white !important;
+        color: black !important;
+        padding: 10px;
+    }
+
+    .toolbar {
+        display: none;
+    }
+
+    .section {
+        background: white !important;
+        border: 1px solid #ddd;
+        box-shadow: none;
+    }
+
+    .section-title,
+    .job-title,
+    .header h1 {
+        color: #1f2937 !important;
+    }
+
+    .skills-table td:first-child {
+        background: #f3f4f6 !important;
+    }
+
+    a {
+        color: black !important;
+        text-decoration: none;
+    }
+}
+@media print {
+    .toolbar {
+        display: none !important;
+    }
+
+    body {
+        background: white !important;
+        color: black !important;
+    }
+
+    .section {
+        background: white !important;
+        border: 1px solid #ddd !important;
+    }
+}
+</style>
+</head>
+
+<body>
+<div class="toolbar">
+ 	   <a href="resume.pdf" download>
+    <button>📄 Download Resume</button>
+</a>
+</div>
+
+<div id="resume">
+
+<div class="header">
+    <h1>PRADEEPKUMAR G</h1>
+    <div class="contact">
+        📧 <a href="mailto:pradeepkumar.g@hotmail.com">
+    Contact Me
+</a> |
+        📞 +91 96630 33277 |		
+        🔗 <a href="https://linkedin.com/in/pradeepkumar-g-b3582565">
+    LinkedIn
+</a>
+    </div>
+</div>
+<script>
+function downloadPDF() {
+
+    const element = document.getElementById('resume');
+
+    const options = {
+        margin: 0.3,
+        filename: 'PradeepKumar_Resume.pdf',
+        image: {
+            type: 'jpeg',
+            quality: 1
+        },
+        html2canvas: {
+            scale: 2,
+            useCORS: true
+        },
+        jsPDF: {
+            unit: 'in',
+            format: 'a4',
+            orientation: 'portrait'
+        },
+        pagebreak: {
+            mode: ['avoid-all', 'css', 'legacy']
+        }
+    };
+
+    html2pdf().set(options).from(element).save();
+}
+</script>
+<div class="section">
+    <div class="section-title">Professional Summary</div>
+    <p class="summary">
+        Experienced BFSI technology professional with 15+ years of expertise in Prime Brokerage,
+        Listed Derivatives, Asset Management, and Equities processing. Proven track record of
+        leading strategic projects, driving application and infrastructure transformations,
+        and delivering high-quality solutions in complex financial environments. Strong
+        background in Oracle, ETL, Cloud Technologies, DevOps, Automation, and Production Support.
+    </p>
+</div>
+
+<div class="section">
+    <div class="section-title">Technical Skills</div>
+
+    <table class="skills-table">
+        <tr>
+            <td>Experience</td>
+            <td>15+ Years (Since September 2010)</td>
+        </tr>
+        <tr>
+            <td>Domain Expertise</td>
+            <td>Prime Brokerage, Listed Derivatives, Asset Management, Equities</td>
+        </tr>
+        <tr>
+            <td>Databases</td>
+            <td>Oracle 12c, MS SQL Server</td>
+        </tr>
+        <tr>
+            <td>Clearing Platforms</td>
+            <td>Clearvision (FIS), COPPER (ION)</td>
+        </tr>
+        <tr>
+            <td>ETL Tools</td>
+            <td>Informatica PowerCenter 9.5, PL/SQL</td>
+        </tr>
+        <tr>
+            <td>Programming</td>
+            <td>Python, Shell Scripting, GraphQL, C, C++</td>
+        </tr>
+        <tr>
+            <td>Scheduling Tools</td>
+            <td>Control-M, AutoSys, UC4, Airflow</td>
+        </tr>
+        <tr>
+            <td>DevOps & CI/CD</td>
+            <td>Git, GitHub, Jenkins, XL Deploy, Helm, Harbor</td>
+        </tr>
+        <tr>
+            <td>Monitoring</td>
+            <td>Geneos, ELK Stack, Grafana</td>
+        </tr>
+        <tr>
+            <td>Containers & Cloud</td>
+            <td>Docker, Kubernetes, Azure AKS</td>
+        </tr>
+        <tr>
+            <td>Other Tools</td>
+            <td>YAML, K9s, Draw.io, Markdown, Regex</td>
+        </tr>
+        <tr>
+            <td>Protocols</td>
+            <td>SSH, SFTP, SCP, FTP, HTTP(S), FIX</td>
+        </tr>
+    </table>
+</div>
+
+<div class="section">
+    <div class="section-title">Professional Highlights</div>
+
+    <ul>
+        <li>15+ years of experience in application support, production management, and enterprise financial systems.</li>
+        <li>Expertise in Oracle PL/SQL development, database performance tuning, and query optimization.</li>
+        <li>Strong experience in ETL, data warehousing, and automation using Informatica, Python, and Shell scripting.</li>
+        <li>Successfully delivered major transformation initiatives including Informatica, Control-M, Solaris-to-Linux, Clearvision, and Cloud migrations.</li>
+        <li>Implemented FISCD BRM and enterprise monitoring platforms including Geneos and ELK.</li>
+        <li>Managed secure enterprise file-transfer solutions using SFTP, SCP, SSH, and FTP.</li>
+        <li>Recognized for driving operational excellence, system reliability, and service quality.</li>
+    </ul>
+</div>
+
+<div class="section">
+    <div class="section-title">Key Achievements</div>
+
+    <ul>
+        <li>Delivered infrastructure, host, and process consolidation initiatives resulting in cost savings exceeding €1 Million.</li>
+        <li>Led transformation programs that improved operational efficiency and platform stability.</li>
+        <li>Recognized as an Outstanding Performer for multiple consecutive years at HCL Technologies and Société Générale.</li>
+    </ul>
+</div>
+
+<div class="section">
+    <div class="section-title">Professional Experience</div>
+
+    <div class="job">
+        <div class="job-title">
+            Chapter Manager | Société Générale – GSC
+            <span class="duration">Oct 2017 – Present</span>
+        </div>
+        <div class="project">Project: Prime Services & Clearing</div>
+    </div>
+
+    <div class="job">
+        <div class="job-title">
+            Senior Support Analyst | Tata Consultancy Services
+            <span class="duration">Jan 2017 – Sep 2017</span>
+        </div>
+        <div class="project">Projects: Credit Suisse Exchange Link & Expense Management</div>
+    </div>
+
+    <div class="job">
+        <div class="job-title">
+            Senior Software Engineer | HCL Technologies
+            <span class="duration">Sep 2010 – Dec 2016</span>
+        </div>
+        <div class="project">Project: Deutsche Asset Management (DeAM)</div>
+    </div>
+
+</div>
+</div>
+</body>
+
+</html>
